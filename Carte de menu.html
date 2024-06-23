@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu de la Passion et de la Découverte</title>
+    <style>
+        /* Styles CSS intégrés */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #ffd6e8; /* Couleur de fond rose pastel */
+            background-image: url('heart-3097905_640.webp'); /* Image de fond avec des cœurs */
+            background-size: cover; /* Assure que l'image de fond couvre toute la page */
+            background-blend-mode: overlay; /* Mode de fusion pour l'image de fond */
+            scroll-behavior: smooth; /* Défilement fluide */
+        }
+
+        header {
+            background-color: #fff; /* Fond de couleur blanche pour la bannière */
+            text-align: center;
+            padding: 20px 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Ombre légère */
+            position: fixed; /* Bannière fixée en haut de la page */
+            width: 100%; /* Pleine largeur */
+            z-index: 1000; /* Assure que la bannière est au-dessus du reste du contenu */
+        }
+
+        h1.banner-title {
+            color: #cc0066;
+            margin: 0;
+            font-size: 2em; /* Taille de police plus grande pour le titre principal */
+            font-weight: bold;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1); /* Légère ombre pour le texte */
+        }
+
+        main {
+            padding-top: 120px; /* Ajoute un espace en haut du contenu principal pour laisser de la place à la bannière fixe */
+        }
+
+        .section {
+            padding: 50px 0;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Couleur de fond semi-transparente pour chaque section */
+            border-bottom: 1px solid #ccc;
+            opacity: 0; /* Opacité initiale pour l'animation */
+            transform: translateY(20px); /* Décalage vers le bas pour l'animation */
+            transition: opacity 0.8s ease, transform 0.8s ease; /* Transition pour l'animation */
+        }
+
+        .section.active {
+            opacity: 1; /* Opacité maximale lorsque la section est active */
+            transform: translateY(0); /* Annule le décalage lorsque la section est active */
+        }
+
+        h2 {
+            color: #cc0066;
+            margin-top: 0;
+            font-weight: normal;
+        }
+
+        .menu-item {
+            margin-bottom: 15px;
+        }
+
+        .menu-item h3 {
+            color: #cc0066;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+
+        .menu-item p {
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="banner-title">Menu de la Passion et de la Découverte</h1>
+    </header>
+
+    <main>
+        <div class="section" id="entree">
+            <h2>Entrée</h2>
+            <div class="menu-item">
+                <h3>Étreinte Marine</h3>
+                <p>Délicates tranches de saumon mariné au zeste de citron, dans une danse légère avec câpres et herbes fraîches.</p>
+            </div>
+        </div>
+
+        <div class="section" id="plat">
+            <h2>Plat Principal</h2>
+            <div class="menu-item">
+                <h3>Sérénade Cordon Bleu</h3>
+                <p>Tendres escalopes de volaille enveloppées d'amour, garnies de jambon et de fromage, servies avec un accompagnement de secrets raffinés.</p>
+            </div>
+        </div>
+
+        <div class="section" id="dessert">
+            <h2>Dessert</h2>
+            <div class="menu-item">
+                <h3>Harmonie de Perles et de Douceurs</h3>
+                <p>Perles du Japon dans un bain de lait de coco, accompagnées d'un coulis de passion et de rêveries sucrées.</p>
+            </div>
+        </div>
+
+        <div class="section" id="boissons">
+            <h2>Boissons</h2>
+            <div class="menu-item">
+                <h3>Esquisses de Rafraîchissement</h3>
+                <p>Sélection de délices non alcoolisés pour accompagner ce voyage culinaire.</p>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Script pour activer l'animation lors du défilement
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (sectionTop < windowHeight * 0.75) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
